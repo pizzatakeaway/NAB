@@ -1,0 +1,19 @@
+# conda env create|update -f environment.yml
+name: numenta_NAB
+dependencies:
+- python=2.7
+- pip=19.1.*
+- pip:
+  - '--editable=.'
+  - ipython==5.8.0
+  - joblib
+  - jupyter==1.0.0  
+  - jupyterlab==0.33.12
+  - matplotlib
+  - numpy==1.16.3
+  - nupic==1.0.5
+  - pandas==0.20.3
+  - seaborn  
+  - scikit-learn
+  - simplejson==3.11.1
+  - boto3==1.7.11

@@ -85,16 +85,16 @@
     },
     "numenta": {
         "reward_low_FN_rate": {
-            "score": 26.634450197137568,
-            "threshold": 0.5421876907348634
+            "score": 26.635852494795998,
+            "threshold": 0.5126953125
         },
         "reward_low_FP_rate": {
-            "score": 30.431072517124093,
-            "threshold": 0.5751955032348636
+            "score": 27.162840644236326,
+            "threshold": 0.5125976562500002
         },
         "standard": {
-            "score": 46.634450197137596,
-            "threshold": 0.5421876907348634
+            "score": 45.63585249479601,
+            "threshold": 0.5126953125
         }
     },
     "numentaTM": {

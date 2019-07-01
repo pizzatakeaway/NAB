@@ -31,6 +31,7 @@ except:
 
 from nab.detectors.base import AnomalyDetector
 
+
 # Fraction outside of the range of values seen so far that will be considered
 # a spatial anomaly regardless of the anomaly likelihood calculation. This
 # accounts for the human labelling bias for spatial values larger than what

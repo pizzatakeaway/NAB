@@ -41,12 +41,12 @@ class DataFile(object):
     """
     @param srcPath (string)   Filename of datafile to read.
     """
-    self.srcPath = srcPath
+    self.srcPath = srcPath  # path to file inclusive .csv
 
-    self.fileName = os.path.split(srcPath)[1]
+    self.fileName = os.path.split(srcPath)[1]  # select .csv name
 
     self.data = pandas.io.parsers.read_csv(self.srcPath,
-                                           header=0, parse_dates=[0])
+                                           header=0, parse_dates=[0])  # header True, col[0] as date
 
 
   def write(self, newPath=None):
@@ -120,8 +120,8 @@ class Corpus(object):
     @param srcRoot    (string)    Source directory of corpus.
     """
     self.srcRoot = srcRoot
-    self.dataFiles = self.getDataFiles()
-    self.numDataFiles = len(self.dataFiles)
+    self.dataFiles = self.getDataFiles()  # using class DataFile, load files
+    self.numDataFiles = len(self.dataFiles)  # number of data sets in the dir
 
 
   def getDataFiles(self):
@@ -131,8 +131,8 @@ class Corpus(object):
     @return (dict)    Keys are relative paths (from self.srcRoot) and values are
                       the corresponding data files.
     """
-    filePaths = absoluteFilePaths(self.srcRoot)
-    dataSets = [DataFile(path) for path in filePaths if ".csv" in path]
+    filePaths = absoluteFilePaths(self.srcRoot)  # absolute paths to all files in the tree
+    dataSets = [DataFile(path) for path in filePaths if ".csv" in path]  # collect .csv data, Filename & path
 
     def getRelativePath(srcRoot, srcPath):
       return srcPath[srcPath.index(srcRoot)+len(srcRoot):]\
